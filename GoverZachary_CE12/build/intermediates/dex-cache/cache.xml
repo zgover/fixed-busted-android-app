@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Zachary/Documents/Bitbucket/BrokenAndroidApp/GoverZachary_CE12/app/libs/commons-io-2.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/Zachary/Documents/Bitbucket/BrokenAndroidApp/GoverZachary_CE12/app/build/intermediates/pre-dexed/debug/commons-io-2.4_36377bcbf48eb5894d9ec4edb7a76218483bf5b1.jar" />
+    </item>
+
+</items>

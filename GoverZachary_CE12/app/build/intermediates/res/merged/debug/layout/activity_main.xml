@@ -1,0 +1,170 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/members_list_screen"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:visibility="visible">
+
+		<ListView
+			android:id="@+id/members_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/member_details_screen"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingTop="25dp"
+		android:paddingLeft="15dp"
+		android:paddingRight="15dp"
+		android:orientation="vertical"
+		android:visibility="gone">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Name:"/>
+
+			<TextView
+				android:id="@+id/text_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Name Here"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Birthday:"/>
+
+			<TextView
+				android:id="@+id/text_birthday"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Birthday Here"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Gender:"/>
+
+			<TextView
+				android:id="@+id/text_gender"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Gender Here"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Twitter ID:"/>
+
+			<TextView
+				android:id="@+id/text_twitter_id"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Name Here"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Committees:"/>
+
+			<TextView
+				android:id="@+id/text_num_committees"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Committees Here"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="20dp"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:text="Roles:"/>
+
+			<TextView
+				android:id="@+id/text_num_roles"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:paddingLeft="10dp"
+				android:text="Roles Here"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
