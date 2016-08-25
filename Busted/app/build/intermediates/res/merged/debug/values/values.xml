@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Busted</string>
+    <string name="birthday">Birthday:</string>
+    <string name="gender">Gender:</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="name">Name:</string>
+    <string name="num_committees">Committees:</string>
+    <string name="num_roles">Terms:</string>
+    <string name="twitter_id">Twitter ID:</string>
+</resources>
