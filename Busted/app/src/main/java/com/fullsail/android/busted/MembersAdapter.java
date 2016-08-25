@@ -29,7 +29,7 @@ public class MembersAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return 0;
+		return mMembers.size();
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class MembersAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int _position) {
-		return 0;
+		return mMembers.get(_position).getId();
 	}
 
 	@Override
@@ -51,6 +51,8 @@ public class MembersAdapter extends BaseAdapter {
 
 		if(_convertView == null) {
 			_convertView = LayoutInflater.from(mContext).inflate(android.R.layout.simple_list_item_1, _parent, false);
+		} else {
+
 		}
 
 		Member member = (Member) getItem(_position);

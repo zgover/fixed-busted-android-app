@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 
 	private View mMembersListScreen;
 	private View mMemberDetailsScreen;
+	private ListView lv;
 
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -30,6 +31,8 @@ public class MainActivity extends Activity {
 
 		mMembersListScreen = findViewById(R.id.members_list_screen);
 		mMemberDetailsScreen = findViewById(R.id.member_details_screen);
+		lv = (ListView) mMembersListScreen.findViewById(R.id.members_list);
+		lv.setOnItemClickListener(mItemClickListener);
 
 		GetMembersTask task = new GetMembersTask(this);
 		task.execute();
@@ -39,7 +42,6 @@ public class MainActivity extends Activity {
 		mMemberDetailsScreen.setVisibility(View.GONE);
 		mMembersListScreen.setVisibility(View.VISIBLE);
 
-		ListView lv = (ListView)mMembersListScreen.findViewById(R.id.members_list);
 		lv.setAdapter(new MembersAdapter(this, _members));
 	}
 
@@ -64,22 +66,22 @@ public class MainActivity extends Activity {
 	public void populateMemberDetailsScreen(String _name, String _birthday, String _gender,
 			String _twitterId, String _numCommittees, String _numRoles) {
 
-		TextView tv = (TextView)mMembersListScreen.findViewById(R.id.text_name);
+		TextView tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_name);
 		tv.setText(_name);
 
-		tv = (TextView)mMembersListScreen.findViewById(R.id.text_birthday);
+		tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_birthday);
 		tv.setText(_birthday);
 
-		tv = (TextView)mMembersListScreen.findViewById(R.id.text_gender);
+		tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_gender);
 		tv.setText(_gender);
 
-		tv = (TextView)mMembersListScreen.findViewById(R.id.text_twitter_id);
+		tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_twitter_id);
 		tv.setText(_twitterId);
 
-		tv = (TextView)mMembersListScreen.findViewById(R.id.text_num_committees);
+		tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_num_committees);
 		tv.setText(_numCommittees);
 
-		tv = (TextView)mMembersListScreen.findViewById(R.id.text_num_roles);
+		tv = (TextView) mMemberDetailsScreen.findViewById(R.id.text_num_roles);
 		tv.setText(_numRoles);
 	}
 
@@ -87,7 +89,8 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onItemClick(AdapterView<?> _parent, View _view, int _position, long _id) {
-			// TODO: Show the members detail screen
+			int itemId = ((Member) lv.getAdapter().getItem(_position)).getId();
+			showMemberDetailsScreen(itemId);
 		}
 
 	};

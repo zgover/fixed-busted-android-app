@@ -36,7 +36,7 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 
 			JSONArray membersJson = response.getJSONArray("objects");
 
-			ArrayList<Member> members = new ArrayList<Member>();
+			ArrayList<Member> members = new ArrayList<>();
 
 			for(int i = 0; i < membersJson.length(); i++) {
 				JSONObject obj = membersJson.getJSONObject(i);
@@ -48,9 +48,6 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 
 				members.add(new Member(id, name, party));
 			}
-
-			// Update the UI
-			mActivity.showMembersListScreen(members);
 
 			return members;
 
@@ -64,5 +61,7 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 	@Override
 	protected void onPostExecute(ArrayList<Member> _result) {
 		super.onPostExecute(_result);
+		// Update the UI
+		mActivity.showMembersListScreen(_result);
 	}
 }

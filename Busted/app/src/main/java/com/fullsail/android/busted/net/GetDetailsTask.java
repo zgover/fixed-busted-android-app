@@ -16,7 +16,7 @@ import com.fullsail.android.busted.MainActivity;
 
 public class GetDetailsTask extends AsyncTask<Integer, Void, HashMap<String, String>> {
 
-	private static final String API_URL = "https://www.govtrack.us/api/v2/person/ ";
+	private static final String API_URL = "https://www.govtrack.us/api/v2/person/";
 
 	private static final String NAME = "name";
 	private static final String BIRTHDAY = "birthday";
@@ -36,7 +36,7 @@ public class GetDetailsTask extends AsyncTask<Integer, Void, HashMap<String, Str
 
 		// Add member ID to the end of the URL
 		String data = NetworkUtils.getNetworkData(API_URL + _params[0]);
-		HashMap<String, String> retValues = new HashMap<String, String>();
+		HashMap<String, String> retValues = new HashMap<>();
 
 		try {
 
@@ -67,20 +67,22 @@ public class GetDetailsTask extends AsyncTask<Integer, Void, HashMap<String, Str
 			e.printStackTrace();
 		}
 
-		// Update the UI
-		String name = retValues.get(NAME);
-		String birthday = retValues.get(BIRTHDAY);
-		String gender = retValues.get(GENDER);
-		String twitterId = retValues.get(TWITTER_ID);
-		String numCommittees = retValues.get(NUM_COMMITTEES);
-		String numRoles = retValues.get(NUM_ROLES);
-		mActivity.populateMemberDetailsScreen(name, birthday, gender, twitterId, numCommittees, numRoles);
-
 		return retValues;
 	}
 
 	@Override
 	protected void onPostExecute(HashMap<String, String> _result) {
 		super.onPostExecute(_result);
+
+		// Update the UI
+		String name = _result.get(NAME);
+		String birthday = _result.get(BIRTHDAY);
+		String gender = _result.get(GENDER);
+		String twitterId = _result.get(TWITTER_ID);
+		String numCommittees = _result.get(NUM_COMMITTEES);
+		String numRoles = _result.get(NUM_ROLES);
+		mActivity.populateMemberDetailsScreen(
+			name, birthday, gender, twitterId, numCommittees, numRoles
+		);
 	}
 }
